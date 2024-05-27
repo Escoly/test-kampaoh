@@ -24,12 +24,13 @@ import {
 } from "@nextui-org/modal";
 import { Button } from "@nextui-org/button";
 
+import ListCard from "./listCard";
+
 import KampaohBlackLogo from "@/public/kampaoh-logo-black.png";
 import KampaohWhiteLogo from "@/public/kampaoh-logo-white.png";
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
+import { ThemeSwitch } from "@/components/themeSwitch";
 import { useGlobalState } from "@/app/context/globalStateContext";
-import ListCard from "./listCard";
 
 export const Navbar = ({ defaultTheme }: { defaultTheme: string }) => {
   const { state } = useGlobalState();
@@ -45,7 +46,7 @@ export const Navbar = ({ defaultTheme }: { defaultTheme: string }) => {
 
   return (
     <Fragment>
-      <Modal isOpen={isFavModalOpen} hideCloseButton={true}>
+      <Modal hideCloseButton={true} isOpen={isFavModalOpen}>
         <ModalContent>
           <ModalHeader className="flex flex-col gap-1">Favoritos</ModalHeader>
           <ModalBody>
@@ -53,9 +54,9 @@ export const Navbar = ({ defaultTheme }: { defaultTheme: string }) => {
               ? state.favs.map((fav) => (
                   <ListCard
                     key={fav.id}
-                    item={fav}
-                    isPressable={false}
                     isDeletable={true}
+                    isPressable={false}
+                    item={fav}
                   />
                 ))
               : "Todavía no hay favoritos"}
@@ -77,23 +78,23 @@ export const Navbar = ({ defaultTheme }: { defaultTheme: string }) => {
               {currentTheme === "dark" ? (
                 <Image
                   alt={"logo"}
-                  height={300}
+                  height={250}
                   src={KampaohWhiteLogo}
-                  width={300}
+                  width={250}
                 />
               ) : (
                 <Image
                   alt={"logo"}
-                  height={300}
+                  height={250}
                   src={KampaohBlackLogo}
-                  width={300}
+                  width={250}
                 />
               )}
             </NextLink>
           </NavbarBrand>
           <NavbarItem className="ml-4">
             <div className="flex flex-row items-center">
-              <i className="fa-solid fa-cat text-3xl mr-1" />
+              <i className="fa-solid fa-cat text-2xl mr-1" />
               <p className="text-2xl">{state.cats}</p>
             </div>
           </NavbarItem>
@@ -105,7 +106,7 @@ export const Navbar = ({ defaultTheme }: { defaultTheme: string }) => {
                 <NextLink
                   className={clsx(
                     linkStyles({ color: "foreground", size: "lg" }),
-                    "data-[active=true]:text-primary data-[active=true]:font-medium"
+                    "data-[active=true]:text-primary data-[active=true]:font-medium",
                   )}
                   color="foreground"
                   href={item.href}
@@ -128,7 +129,7 @@ export const Navbar = ({ defaultTheme }: { defaultTheme: string }) => {
             }}
           >
             <div className="flex flex-row items-center">
-              <i className="fa-solid fa-heart text-3xl mr-2" />
+              <i className="fa-solid fa-heart text-2xl mr-2" />
               <p className="text-2xl">{state.favs.length}</p>
             </div>
           </NavbarItem>
@@ -151,8 +152,8 @@ export const Navbar = ({ defaultTheme }: { defaultTheme: string }) => {
                     index === 2
                       ? "primary"
                       : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
+                        ? "danger"
+                        : "foreground"
                   }
                   href="#"
                   size="lg"

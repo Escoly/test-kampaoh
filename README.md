@@ -1,10 +1,13 @@
-# Next.js & NextUI Template
+# Kampaho Tech Test
 
-This is a template for creating applications using Next.js 14 (app directory) and NextUI (v2).
+Esta prueba técnica ha sido realizada por Albert Escolar Cano
 
-[Try it on CodeSandbox](https://githubbox.com/nextui-org/next-app-template)
+[Repositorio del Proyecto](https://github.com/Escoly/test-kampaoh)
 
-## Technologies Used
+[Linkedin](https://www.linkedin.com/in/albert-escolar-cano/)
+
+
+## Tecnologías Utilizadas
 
 - [Next.js 14](https://nextjs.org/docs/getting-started)
 - [NextUI v2](https://nextui.org/)
@@ -14,40 +17,40 @@ This is a template for creating applications using Next.js 14 (app directory) an
 - [Framer Motion](https://www.framer.com/motion/)
 - [next-themes](https://github.com/pacocoursey/next-themes)
 
-## How to Use
+## Instrucciones
 
-### Use the template with create-next-app
+### Instalar las dependencias
 
-To create a new project based on this template using `create-next-app`, run the following command:
+Para intalar las dependencias necesarias para arrancar el proyecto puedes usar los siguientes comandos:
+
+ `npm`, `yarn`, `pnpm`, `bun`, 
 
 ```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
+pnpm install
 ```
 
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
-
+### Arrancar el proyecto
+Usa el siguiente comando para arrancar el proyecto:
 ```bash
-npm install
-```
-
-### Run the development server
-
-```bash
-npm run dev
+pnpm run dev
 ```
 
 ### Setup pnpm (optional)
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+Si usas `pnpm`, es posible que tengas que añadir la siguiente linea de código a tu archivo `.npmrc`:
 
 ```bash
 public-hoist-pattern[]=*@nextui-org/*
 ```
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+Después de modificar el archivo `.npmrc`, tienes que usar el comando `pnpm install` para asegurarte que las dependencias se han instalado correctamente.
 
-## License
+## Observaciones y Comentarios
 
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+Me habría gustado haber podido incorporar un CRUD completo con la API propuesta para la prueba y haber creado una página de detalle desde la que editar la información de los usuarios pero me ha sido imposible por falta de tiempo.
+
+A pesar de esto, ha sido una muy buena oportunidad para aprender y practicar en la creación y uso de los context y providers de react. Anteriormente sólo había usado Redux y es gratificante poder disfrutar de las misma funcionalidades sin depender que depender en otro módulo de terceros.
+
+
+
+

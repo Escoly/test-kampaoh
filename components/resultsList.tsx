@@ -22,7 +22,7 @@ export default function ResultsList({
   const [scrollPosition, setScrollPosition] = useState(0);
   const [currentData, setCurrentData] = useState([]);
   const [currentListContent, setCurrentListConent] = useState(
-    10 || (params.perPage && parseInt(params.perPage))
+    10 || (params.perPage && parseInt(params.perPage)),
   );
   const handleGetOwners = async () => {
     const data = await getOwners(params.name, params.perPage);
@@ -73,7 +73,7 @@ export default function ResultsList({
   const handleScrollEvent = (e: any) => {
     const { scrollTop, scrollHeight, clientHeight } = e.target;
     const position = Math.ceil(
-      (scrollTop / (scrollHeight - clientHeight)) * 100
+      (scrollTop / (scrollHeight - clientHeight)) * 100,
     );
 
     setScrollPosition(position);

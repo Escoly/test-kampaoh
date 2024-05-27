@@ -19,6 +19,8 @@ export default function DetailCard({ selectedCard }: { selectedCard: any }) {
       dispatch({ favs: updatedFavs });
     }
   };
+  const seed = 12345;
+  const phoneNum = (selectedCard.id * seed).toString().substring(0, 9);
 
   return (
     <Card className="flex flex-col">
@@ -27,8 +29,9 @@ export default function DetailCard({ selectedCard }: { selectedCard: any }) {
         <p className="text-blue-500">{`  ${selectedCard.status}`}</p>
       </CardHeader>
       <CardBody>
-        <p>{`Genero: ${selectedCard.gender}`}</p>
+        <p>{`Género: ${selectedCard.gender}`}</p>
         <p>{`Email: ${selectedCard.email}`}</p>
+        <p>{`Teléfono: ${phoneNum}`}</p>
       </CardBody>
       <CardFooter className="justify-center">
         <Button
